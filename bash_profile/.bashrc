@@ -71,7 +71,8 @@ fi
 if [ "$color_prompt" = yes ]; then
 #    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n$(__git_ps1 "(%s)") \$ '
 #    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;33m\]@\[\033[01;31m\]\h\[\033[01;33m\]:\[\033[01;34m\]\w\n\[\033[01;35m\]$(__git_ps1 "(%s)") \[\033[01;33m\]\$ \[\033[00m\]'
-    PS1='${debian_chroot:+($debian_chroot)}\e[0;32m\u\e[m\e[0;37m@\e[m\e[0;31m\h\e[m\e[0;37m:\e[m\e[0;37m\w\e[m\n\e[0;35m$(__git_ps1 "(%s)")\e[m\e[0;39m\$\e[m '
+    PS1='${debian_chroot:+($debian_chroot)}\e[0;32m\u\e[m\e[0;37m@\e[m\e[0;31m\h\e[m\e[0;37m:\e[m\w\n\e[0;35m$(__git_ps1 "(%s)")\e[m\e[0;37m\$\e[m '
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;33m\]@\[\033[01;34m\]\h\[\033[01;33m\]:\[\033[00m\]\w\n\[\033[01;35m\]$(__git_ps1 "(%s)")\[\033[01;33m\]\$ \[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
