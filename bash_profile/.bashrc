@@ -4,15 +4,11 @@
 
 source ~/.git-prompt.sh
 #source ~/.git-completion.bash
-
-# colors!
-green="\[\033[0;32m\]"
-blue="\[\033[0;34m\]"
-purple="\[\033[0;35m\]"
-#reset="\[\033[0m\]"
-rest="\[\033[00m\]"
-
 export GIT_PS1_SHOWDIRTYSTATE=1
+
+#Arrow up and down bindings
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
 
 # If not running interactively, don't do anything
 case $- in
@@ -69,10 +65,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n$(__git_ps1 "(%s)") \$ '
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;33m\]@\[\033[01;31m\]\h\[\033[01;33m\]:\[\033[01;34m\]\w\n\[\033[01;35m\]$(__git_ps1 "(%s)") \[\033[01;33m\]\$ \[\033[00m\]'
     PS1='${debian_chroot:+($debian_chroot)}\e[0;32m\u\e[m\e[0;37m@\e[m\e[0;31m\h\e[m\e[0;37m:\e[m\w\n\e[0;35m$(__git_ps1 "(%s)")\e[m\e[0;37m\$\e[m '
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;33m\]@\[\033[01;34m\]\h\[\033[01;33m\]:\[\033[00m\]\w\n\[\033[01;35m\]$(__git_ps1 "(%s)")\[\033[01;33m\]\$ \[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
